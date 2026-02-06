@@ -1475,15 +1475,18 @@ img {
     }
 
     .nav-links a {
-        padding: var(--space-sm) 0;
+        padding: var(--space-md) 0;
         font-size: var(--font-size-base);
         color: var(--color-text-primary);
     }
 
     .nav-links .btn-nav {
         text-align: center;
-        margin-top: var(--space-sm);
+        margin-top: var(--space-md);
         white-space: nowrap;
+        padding: var(--space-md) var(--space-xl);
+        width: 100%;
+        display: block;
     }
 
     .nav {
@@ -1525,7 +1528,22 @@ img {
 
     /* Sections */
     .container {
-        padding: 0 var(--space-lg);
+        padding: 0 var(--space-md);
+        overflow-x: hidden;
+    }
+
+    .contact-form {
+        padding: var(--space-md);
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+        max-width: 100%;
+        /* Prevents iOS zoom */
     }
 
     .section-header h2 {
