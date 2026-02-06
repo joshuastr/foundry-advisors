@@ -198,8 +198,8 @@ img {
 }
 
 .btn-large {
-    padding: var(--space-lg) var(--space-2xl);
-    font-size: var(--font-size-lg);
+    padding: var(--space-md) var(--space-xl);
+    font-size: var(--font-size-base);
 }
 
 /* ===== Navigation ===== */
