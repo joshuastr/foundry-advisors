@@ -1104,48 +1104,73 @@ img {
     background: var(--color-bg-elevated);
 }
 
-.team-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.team-description {
-    margin-bottom: var(--space-2xl);
-}
-
-.team-description p {
-    font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-md);
-    line-height: 1.8;
-}
-
-.credentials {
+.edge-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-md);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
 }
 
-.credential {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-md) var(--space-lg);
+.edge-card {
+    padding: var(--space-xl);
     background: var(--color-bg);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+    border-radius: var(--radius-lg);
     transition: all var(--transition-base);
 }
 
-.credential:hover {
+.edge-card:hover {
     border-color: var(--color-accent);
-    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
 }
 
-.credential-icon {
+.edge-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-lg);
+    color: white;
+}
+
+.edge-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+}
+
+.edge-card p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+}
+
+.edge-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+}
+
+.edge-list li {
+    position: relative;
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.edge-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
     color: var(--color-accent);
+    font-weight: 600;
 }
 
 /* ===== Fit Section ===== */
@@ -1656,8 +1681,7 @@ img {
         width: 45px;
     }
 
-    .credentials {
-        flex-direction: column;
-        gap: var(--space-sm);
+    .edge-grid {
+        grid-template-columns: 1fr;
     }
 }
