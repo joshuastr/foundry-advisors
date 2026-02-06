@@ -1240,12 +1240,42 @@ img {
     }
 
     /* Calculator */
+    .calculator-section {
+        padding: var(--space-2xl) 0;
+    }
+
     .calculator-grid {
         grid-template-columns: 1fr;
     }
 
     .calculator-container {
-        padding: var(--space-xl);
+        padding: var(--space-lg);
+        margin: 0 var(--space-md);
+        max-width: calc(100vw - var(--space-xl));
+        overflow: hidden;
+    }
+
+    .calculator-results {
+        padding: var(--space-md);
+    }
+
+    .result-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+    }
+
+    .result-row.highlight {
+        margin: var(--space-sm) calc(-1 * var(--space-md));
+        padding: var(--space-md);
+    }
+
+    .result-value {
+        font-size: var(--font-size-lg);
+    }
+
+    .result-row.highlight .result-value {
+        font-size: var(--font-size-xl);
     }
 
     .results-grid {
@@ -1253,7 +1283,13 @@ img {
     }
 
     .result-amount {
-        font-size: var(--font-size-3xl);
+        font-size: var(--font-size-2xl);
+    }
+
+    .input-group input,
+    .input-group select {
+        font-size: 16px;
+        /* Prevents iOS zoom on focus */
     }
 
     /* Services */
