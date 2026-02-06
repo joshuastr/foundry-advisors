@@ -546,10 +546,41 @@
                 <p>No pitch. No pressure. Just a confidential discussion about where your business is, where you want to
                     go, and whether we can help you get there.</p>
 
-                <div class="cta-buttons">
-                    <a href="mailto:hello@foundryadvisors.ca?subject=Foundry%20Advisors%20-%20Schedule%20a%20Call"
-                        class="btn btn-primary btn-large">Schedule a Call</a>
-                </div>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="you@company.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your company name">
+                        </div>
+                        <div class="form-group">
+                            <label for="ebitda">Annual EBITDA Range</label>
+                            <select id="ebitda" name="ebitda">
+                                <option value="">Select range</option>
+                                <option value="under-1m">Under $1M</option>
+                                <option value="1m-3m">$1M - $3M</option>
+                                <option value="3m-5m">$3M - $5M</option>
+                                <option value="5m-10m">$5M - $10M</option>
+                                <option value="over-10m">Over $10M</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">How can we help?</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Tell us about your business and goals..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold btn-large">Request a Conversation</button>
+                </form>
 
                 <div class="cta-details">
                     <div class="cta-detail">
@@ -566,7 +597,7 @@
                             <circle cx="12" cy="12" r="10" />
                             <polyline points="12 6 12 12 16 14" />
                         </svg>
-                        30 minutes
+                        Response within 24 hours
                     </div>
                     <div class="cta-detail">
                         <svg class="detail-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
