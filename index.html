@@ -309,31 +309,17 @@
                             <span class="result-label">Current Valuation</span>
                             <span class="result-value" id="current-valuation">$8,000,000</span>
                         </div>
-                        <div class="result-row blurred">
+                        <div class="result-row">
                             <span class="result-label">Estimated Multiple Lift</span>
                             <span class="result-value" id="multiple-lift">+0.75x</span>
                         </div>
-                        <div class="result-row blurred">
+                        <div class="result-row">
                             <span class="result-label">Post-Improvement Multiple</span>
                             <span class="result-value" id="new-multiple">4.75x</span>
                         </div>
-                        <div class="result-row highlight blurred">
+                        <div class="result-row highlight">
                             <span class="result-label">Additional Value Created</span>
                             <span class="result-value" id="value-created">$1,500,000</span>
-                        </div>
-
-                        <!-- Email gate overlay -->
-                        <div class="email-gate" id="email-gate">
-                            <p>Enter your email to see your full potential uplift</p>
-                            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="email-form"
-                                id="calculator-email-form">
-                                <input type="email" name="email" placeholder="your@email.com" required>
-                                <input type="hidden" name="ebitda" id="form-ebitda">
-                                <input type="hidden" name="multiple" id="form-multiple">
-                                <input type="hidden" name="source" value="calculator">
-                                <button type="submit" class="btn btn-gold">Unlock Full Results</button>
-                            </form>
-                            <span class="email-hint">No spam. Just your personalized analysis.</span>
                         </div>
                     </div>
                 </div>
@@ -735,30 +721,7 @@
             }
         });
 
-        // Email gate handling
-        const emailForm = document.getElementById('calculator-email-form');
-        if (emailForm) {
-            emailForm.addEventListener('submit', function (e) {
-                // Populate hidden fields
-                document.getElementById('form-ebitda').value = document.getElementById('ebitda').value;
-                document.getElementById('form-multiple').value = document.getElementById('multiple').value;
 
-                // Unlock the results visually (form will still submit)
-                document.getElementById('calculator-results').classList.add('unlocked');
-
-                // For demo purposes without Formspree: prevent submit and just unlock
-                // Comment out the line below once you have a real Formspree form ID
-                e.preventDefault();
-
-                // Store unlock state
-                sessionStorage.setItem('calculator_unlocked', 'true');
-            });
-
-            // Check if already unlocked
-            if (sessionStorage.getItem('calculator_unlocked') === 'true') {
-                document.getElementById('calculator-results').classList.add('unlocked');
-            }
-        }
     </script>
 </body>
 
