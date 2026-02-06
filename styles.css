@@ -388,6 +388,28 @@ img {
     text-transform: uppercase;
 }
 
+.hero-stat {
+    margin: var(--space-xl) 0;
+}
+
+.hero-stat-number {
+    display: block;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--color-gold);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-stat-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: var(--space-xs);
+}
+
 /* Dark Hero Theme */
 .broker-hero {
     background: var(--color-bg-dark);
@@ -408,6 +430,10 @@ img {
     color: rgba(255, 255, 255, 0.8);
 }
 
+.broker-hero .hero-stat-label {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 .broker-hero .hero-trust {
     border-top-color: rgba(255, 255, 255, 0.1);
 }
@@ -417,14 +443,14 @@ img {
 }
 
 .broker-hero .btn-secondary {
-    background: var(--color-gold);
-    border-color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
     color: white;
 }
 
 .broker-hero .btn-secondary:hover {
-    background: var(--color-gold);
-    border-color: var(--color-gold);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
     color: white;
 }
 
