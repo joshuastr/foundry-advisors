@@ -623,7 +623,43 @@
                     </div>
                 </div>
 
-                <a href="mailto:partners@foundryadvisors.com" class="btn btn-gold btn-large">Start the Conversation</a>
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                    style="text-align: left; margin-top: var(--space-lg);">
+                    <input type="hidden" name="source" value="broker-partnership">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="broker-name" style="color: var(--color-text);">Name</label>
+                            <input type="text" id="broker-name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="broker-email" style="color: var(--color-text);">Email</label>
+                            <input type="email" id="broker-email" name="email" required placeholder="you@firm.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="broker-firm" style="color: var(--color-text);">Firm / Brokerage</label>
+                            <input type="text" id="broker-firm" name="firm" placeholder="Your firm name">
+                        </div>
+                        <div class="form-group">
+                            <label for="broker-deals" style="color: var(--color-text);">Annual Deal Volume</label>
+                            <select id="broker-deals" name="deal_volume">
+                                <option value="">Select range</option>
+                                <option value="1-5">1–5 deals/year</option>
+                                <option value="6-15">6–15 deals/year</option>
+                                <option value="16-30">16–30 deals/year</option>
+                                <option value="30+">30+ deals/year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="broker-message" style="color: var(--color-text);">Anything we should know?</label>
+                        <textarea id="broker-message" name="message" rows="3"
+                            placeholder="Tell us about your practice, typical deal size, or any clients you have in mind..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-gold btn-large" style="width: 100%;">Start the
+                        Conversation</button>
+                </form>
 
                 <div class="cta-details" style="margin-top: var(--space-xl);">
                     <div class="cta-detail" style="color: rgba(255,255,255,0.6);">
