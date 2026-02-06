@@ -7,42 +7,23 @@
     <meta name="description"
         content="Partner with Foundry Advisors to help your clients maximize exit value. We prep buyers, you close bigger deals.">
     <title>For M&A Advisors & Business Brokers | Foundry Advisors</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="logo.webp">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="For M&A Advisors & Business Brokers | Foundry Advisors">
+    <meta property="og:description"
+        content="Partner with Foundry Advisors to help your clients maximize exit value. We prep buyers, you close bigger deals.">
+    <meta property="og:image" content="logo.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        // Password protection check
-        if (sessionStorage.getItem('foundry_auth') !== 'true') {
-            window.location.href = 'login.html';
-        }
-    </script>
+    <script src="auth.js"></script>
     <style>
-        /* Additional broker-specific styles */
-        .broker-hero {
-            background: var(--color-bg-dark);
-            color: white;
-        }
-
-        .broker-hero .hero-badge {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
-            color: var(--color-gold-light);
-        }
-
-        .broker-hero h1 {
-            color: white;
-        }
-
-        .broker-hero .hero-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .broker-hero .hero-trust p {
-            color: rgba(255, 255, 255, 0.5);
-            border-top-color: rgba(255, 255, 255, 0.1);
-        }
-
+        /* Broker page specific styles (unique to this page) */
         .value-prop-section {
             padding: var(--space-4xl) 0;
             background: var(--color-bg);
