@@ -1684,6 +1684,25 @@ img {
         font-size: var(--font-size-2xl);
     }
 
+    .cta-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .cta-section {
+        padding: var(--space-2xl) 0;
+    }
+
+    .contact-form {
+        padding: var(--space-md);
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
     .cta-details {
         flex-direction: column;
         align-items: center;
