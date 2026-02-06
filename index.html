@@ -53,6 +53,8 @@
                 We help commercial and industrial business owners eliminate operational gaps before
                 sale, so you command the exit valuation your years of work deserve.
             </p>
+            <p class="hero-urgency">Baby boomers own 2.3 million businesses worth $10T+. The exit wave is here—prepared
+                sellers capture the premium.</p>
             <div class="hero-cta">
                 <a href="#calculator" class="btn btn-primary btn-large">See Your Potential Uplift</a>
                 <a href="#contact" class="btn btn-secondary btn-large">Schedule a Conversation</a>
@@ -182,7 +184,7 @@
                         </h3>
                         <ul>
                             <li>Focus on operational value creation</li>
-                            <li>4-6 months with AI-powered execution</li>
+                            <li>4-6 months with modern tooling—not years</li>
                             <li>Hands-on implementation, real results</li>
                             <li>Start now, exit when you're ready</li>
                             <li>Value captured by you, the seller</li>
@@ -224,8 +226,8 @@
                 <div class="approach-step">
                     <div class="step-number">03</div>
                     <h3>Rapid Implementation</h3>
-                    <p>We don't just advise. We execute fast. AI-powered documentation, automated systems, streamlined
-                        processes.
+                    <p>We don't just advise. We execute. Complete documentation in weeks, not months. Systems that
+                        actually work.
                     </p>
                     <div class="step-detail">4-6 month sprints • Not years of consulting</div>
                 </div>
@@ -288,29 +290,43 @@
                         </div>
                     </div>
 
-                    <div class="calculator-results">
+                    <div class="calculator-results" id="calculator-results">
                         <div class="result-row">
                             <span class="result-label">Current Valuation</span>
                             <span class="result-value" id="current-valuation">$8,000,000</span>
                         </div>
-                        <div class="result-row">
+                        <div class="result-row blurred">
                             <span class="result-label">Estimated Multiple Lift</span>
                             <span class="result-value" id="multiple-lift">+0.75x</span>
                         </div>
-                        <div class="result-row">
+                        <div class="result-row blurred">
                             <span class="result-label">Post-Improvement Multiple</span>
                             <span class="result-value" id="new-multiple">4.75x</span>
                         </div>
-                        <div class="result-row highlight">
+                        <div class="result-row highlight blurred">
                             <span class="result-label">Additional Value Created</span>
                             <span class="result-value" id="value-created">$1,500,000</span>
+                        </div>
+
+                        <!-- Email gate overlay -->
+                        <div class="email-gate" id="email-gate">
+                            <p>Enter your email to see your full potential uplift</p>
+                            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="email-form"
+                                id="calculator-email-form">
+                                <input type="email" name="email" placeholder="your@email.com" required>
+                                <input type="hidden" name="ebitda" id="form-ebitda">
+                                <input type="hidden" name="multiple" id="form-multiple">
+                                <input type="hidden" name="source" value="calculator">
+                                <button type="submit" class="btn btn-gold">Unlock Full Results</button>
+                            </form>
+                            <span class="email-hint">No spam. Just your personalized analysis.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="calculator-cta">
-                    <p>This is a simplified estimate. Get a detailed assessment of your specific situation.</p>
-                    <a href="#contact" class="btn btn-gold">Get Your Personalized Analysis</a>
+                    <p>This estimate is directional. Let's discuss your specific situation.</p>
+                    <a href="#contact" class="btn btn-primary">Schedule a Conversation</a>
                 </div>
             </div>
         </div>
@@ -473,7 +489,7 @@
                             <line x1="12" y1="1" x2="12" y2="23" />
                             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                         </svg>
-                        $10M–$100M revenue businesses
+                        $1M–$10M EBITDA industrial businesses
                     </div>
                     <div class="credential">
                         <svg class="credential-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -637,6 +653,31 @@
                 this.value = formatCurrency(value);
             }
         });
+
+        // Email gate handling
+        const emailForm = document.getElementById('calculator-email-form');
+        if (emailForm) {
+            emailForm.addEventListener('submit', function (e) {
+                // Populate hidden fields
+                document.getElementById('form-ebitda').value = document.getElementById('ebitda').value;
+                document.getElementById('form-multiple').value = document.getElementById('multiple').value;
+
+                // Unlock the results visually (form will still submit)
+                document.getElementById('calculator-results').classList.add('unlocked');
+
+                // For demo purposes without Formspree: prevent submit and just unlock
+                // Comment out the line below once you have a real Formspree form ID
+                e.preventDefault();
+
+                // Store unlock state
+                sessionStorage.setItem('calculator_unlocked', 'true');
+            });
+
+            // Check if already unlocked
+            if (sessionStorage.getItem('calculator_unlocked') === 'true') {
+                document.getElementById('calculator-results').classList.add('unlocked');
+            }
+        }
     </script>
 </body>
 

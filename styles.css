@@ -350,8 +350,19 @@ img {
     font-size: var(--font-size-lg);
     color: var(--color-text-secondary);
     max-width: 600px;
-    margin: 0 auto var(--space-2xl);
+    margin: 0 auto var(--space-lg);
     line-height: 1.7;
+}
+
+.hero-urgency {
+    font-size: var(--font-size-sm);
+    color: var(--color-gold-light);
+    max-width: 500px;
+    margin: 0 auto var(--space-2xl);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(217, 119, 6, 0.1);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(217, 119, 6, 0.2);
 }
 
 .hero-cta {
@@ -839,6 +850,74 @@ img {
     font-size: var(--font-size-sm);
     color: var(--color-text-muted);
     margin-bottom: var(--space-md);
+}
+
+/* Email Gate Styles */
+.calculator-results {
+    position: relative;
+}
+
+.result-row.blurred {
+    filter: blur(6px);
+    user-select: none;
+}
+
+.calculator-results.unlocked .result-row.blurred {
+    filter: none;
+    user-select: auto;
+}
+
+.calculator-results.unlocked .email-gate {
+    display: none;
+}
+
+.email-gate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-bg);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    z-index: 10;
+    width: 90%;
+    max-width: 320px;
+}
+
+.email-gate p {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.email-form input[type="email"] {
+    padding: var(--space-md);
+    font-size: var(--font-size-base);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.email-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.email-hint {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
 }
 
 /* ===== Results Banner ===== */
