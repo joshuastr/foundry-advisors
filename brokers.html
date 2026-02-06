@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Partner with Foundry Advisors to help your clients maximize exit value. We prep buyers, you close bigger deals.">
+    <title>For M&A Advisors & Business Brokers | Foundry Advisors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional broker-specific styles */
+        .broker-hero {
+            background: var(--color-bg-dark);
+            color: white;
+        }
+
+        .broker-hero .hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: var(--color-gold-light);
+        }
+
+        .broker-hero h1 {
+            color: white;
+        }
+
+        .broker-hero .hero-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .broker-hero .hero-trust p {
+            color: rgba(255, 255, 255, 0.5);
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .value-prop-section {
+            padding: var(--space-4xl) 0;
+            background: var(--color-bg);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .value-card {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            margin: 0 auto var(--space-lg);
+            color: white;
+        }
+
+        .value-card h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        .value-card .stat {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+
+        .value-card p {
+            color: var(--color-text-secondary);
+        }
+
+        .how-section {
+            padding: var(--space-4xl) 0;
+            background: var(--color-bg-elevated);
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .how-step {
+            position: relative;
+            padding: var(--space-lg);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+        }
+
+        .how-step::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-text-muted);
+            font-size: var(--font-size-xl);
+        }
+
+        .how-step:last-child::after {
+            display: none;
+        }
+
+        .how-number {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-accent);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .how-step h3 {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+        }
+
+        .how-step p {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .benefits-section {
+            padding: var(--space-4xl) 0;
+            background: var(--color-bg);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        .benefits-content h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefits-list li {
+            position: relative;
+            padding-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+            font-weight: 700;
+        }
+
+        .benefits-visual {
+            background: var(--color-bg-elevated);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+        }
+
+        .deal-comparison {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .deal-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .deal-row:last-child {
+            border-bottom: none;
+            padding-top: var(--space-md);
+            background: rgba(217, 119, 6, 0.05);
+            margin: 0 calc(-1 * var(--space-2xl));
+            padding: var(--space-lg) var(--space-2xl) var(--space-lg);
+            border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+        }
+
+        .deal-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+        }
+
+        .deal-values {
+            display: flex;
+            gap: var(--space-2xl);
+        }
+
+        .deal-value {
+            text-align: right;
+        }
+
+        .deal-value span {
+            display: block;
+        }
+
+        .deal-value .amount {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+        }
+
+        .deal-value .tag {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-muted);
+        }
+
+        .deal-value.improved .amount {
+            color: var(--color-gold);
+        }
+
+        .deal-row:last-child .deal-label {
+            color: var(--color-gold-dark);
+            font-weight: 600;
+        }
+
+        .partner-section {
+            padding: var(--space-4xl) 0;
+            background: var(--gradient-dark);
+            color: white;
+        }
+
+        .partner-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .partner-content h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+
+        .partner-content>p {
+            font-size: var(--font-size-lg);
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .partner-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .partner-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: left;
+        }
+
+        .partner-option h3 {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--color-gold-light);
+        }
+
+        .partner-option p {
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (max-width: 768px) {
+
+            .value-grid,
+            .how-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .how-step::after {
+                display: none;
+            }
+
+            .benefits-grid,
+            .partner-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-mark"></div>
+                <span class="logo-text">Foundry Advisors</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">For Business Owners</a>
+                <a href="#how">How It Works</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#partner" class="btn btn-primary btn-nav">Partner With Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero broker-hero">
+        <div class="hero-content">
+            <div class="hero-badge">For M&A Advisors & Business Brokers</div>
+            <h1>
+                Your clients get higher multiples.<br>
+                You close bigger deals.
+            </h1>
+            <p class="hero-subtitle">
+                We prepare commercial and industrial businesses for sale, fixing the operational gaps that
+                buyers discount for. Refer pre-exit clients. We do the work. They sell for more.
+            </p>
+            <div class="hero-cta">
+                <a href="#partner" class="btn btn-gold btn-large">Explore Partnership</a>
+                <a href="#how" class="btn btn-secondary btn-large"
+                    style="border-color: rgba(255,255,255,0.3); color: white;">See How It Works</a>
+            </div>
+            <div class="hero-trust">
+                <p>Commercial • Industrial • Service Businesses</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="value-prop-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">The Opportunity</span>
+                <h2>Turn operational gaps into deal value</h2>
+                <p>Most sellers leave 1–3x EBITDA on the table due to fixable operational issues. We help capture that
+                    value before you go to market.</p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <span class="stat">0.5x – 2x</span>
+                    <h3>Multiple Improvement</h3>
+                    <p>Average uplift for clients who complete our program before going to market.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <span class="stat">12–18 mo</span>
+                    <h3>Optimal Runway</h3>
+                    <p>Ideal engagement window before listing. Enough time to implement, not so long they lose momentum.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <span class="stat">Cleaner Deals</span>
+                    <h3>Smoother Due Diligence</h3>
+                    <p>Documented processes, clean financials, reduced key-person risk. Fewer surprises during DD.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-section" id="how">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">How It Works</span>
+                <h2>Simple referral, shared success</h2>
+                <p>You identify the opportunity. We do the operational heavy lifting. Your client sells for more.</p>
+            </div>
+
+            <div class="how-grid">
+                <div class="how-step">
+                    <div class="how-number">1</div>
+                    <h3>Introduce Us</h3>
+                    <p>When you meet a potential seller 12–36 months out, connect them with us for a confidential
+                        assessment.</p>
+                </div>
+
+                <div class="how-step">
+                    <div class="how-number">2</div>
+                    <h3>We Diagnose</h3>
+                    <p>Free exit readiness diagnostic identifies value gaps and prioritized improvement opportunities.
+                    </p>
+                </div>
+
+                <div class="how-step">
+                    <div class="how-number">3</div>
+                    <h3>We Implement</h3>
+                    <p>12–24 month engagement to fix operational issues, document processes, build management capacity.
+                    </p>
+                </div>
+
+                <div class="how-step">
+                    <div class="how-number">4</div>
+                    <h3>You Close</h3>
+                    <p>They come back to you exit-ready, commanding premium multiples. Bigger deal, same commission
+                        structure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefits-content">
+                    <h2>Why brokers partner with us</h2>
+                    <ul class="benefits-list">
+                        <li>Higher transaction values = larger fees on the same deal</li>
+                        <li>Fewer deals falling apart in due diligence</li>
+                        <li>Clients who are actually ready when they say they're ready</li>
+                        <li>Differentiated service to attract quality listings</li>
+                        <li>Long-term relationship while we prep them</li>
+                        <li>We prep, you sell. No competing for the transaction</li>
+                    </ul>
+                </div>
+
+                <div class="benefits-visual">
+                    <div class="deal-comparison">
+                        <div class="deal-row">
+                            <span class="deal-label">EBITDA</span>
+                            <div class="deal-values">
+                                <div class="deal-value">
+                                    <span class="amount">$2.0M</span>
+                                    <span class="tag">Before</span>
+                                </div>
+                                <div class="deal-value improved">
+                                    <span class="amount">$2.3M</span>
+                                    <span class="tag">After</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deal-row">
+                            <span class="deal-label">Multiple</span>
+                            <div class="deal-values">
+                                <div class="deal-value">
+                                    <span class="amount">4.0x</span>
+                                    <span class="tag">Before</span>
+                                </div>
+                                <div class="deal-value improved">
+                                    <span class="amount">5.25x</span>
+                                    <span class="tag">After</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deal-row">
+                            <span class="deal-label">Transaction Value</span>
+                            <div class="deal-values">
+                                <div class="deal-value">
+                                    <span class="amount">$8.0M</span>
+                                    <span class="tag">Before</span>
+                                </div>
+                                <div class="deal-value improved">
+                                    <span class="amount">$12.1M</span>
+                                    <span class="tag">After</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="deal-row">
+                            <span class="deal-label">Additional Value Created</span>
+                            <div class="deal-values">
+                                <div class="deal-value improved">
+                                    <span class="amount" style="font-size: var(--font-size-2xl);">+$4.1M</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership CTA -->
+    <section class="partner-section" id="partner">
+        <div class="container">
+            <div class="partner-content">
+                <h2>Let's explore a partnership</h2>
+                <p>We're selective about broker partnerships. We want long-term relationships with advisors who share
+                    our focus on client outcomes.</p>
+
+                <div class="partner-options">
+                    <div class="partner-option">
+                        <h3>Referral Partnership</h3>
+                        <p>Introduce clients who are 12–36 months from exit. We handle the prep work. Simple,
+                            no-overhead arrangement.</p>
+                    </div>
+                    <div class="partner-option">
+                        <h3>Co-Marketing</h3>
+                        <p>Joint webinars, content, and client education. Position yourself as the advisor who maximizes
+                            exit value.</p>
+                    </div>
+                </div>
+
+                <a href="mailto:partners@foundryadvisors.com" class="btn btn-gold btn-large">Start the Conversation</a>
+
+                <div class="cta-details" style="margin-top: var(--space-xl);">
+                    <div class="cta-detail" style="color: rgba(255,255,255,0.6);">
+                        <svg class="detail-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                        Confidential terms
+                    </div>
+                    <div class="cta-detail" style="color: rgba(255,255,255,0.6);">
+                        <svg class="detail-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        Selective partnerships
+                    </div>
+                    <div class="cta-detail" style="color: rgba(255,255,255,0.6);">
+                        <svg class="detail-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        No M&A competition
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <div class="logo-mark"></div>
+                    <span class="logo-text">Foundry Advisors</span>
+                </div>
+                <p class="footer-tagline">Pre-exit value creation for industrial businesses.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Foundry Advisors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
